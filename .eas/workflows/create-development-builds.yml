@@ -6,9 +6,11 @@ on:
       - dev
 
 jobs:
-  development:
-    name: Development Android Build
-    runs-on: ubuntu-latest
+  build:
+    type: build
+    params:
+      platform: android
+      profile: development
 
     steps:
       - name: Checkout code
