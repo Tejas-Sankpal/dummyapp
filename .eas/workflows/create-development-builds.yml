@@ -1,0 +1,34 @@
+name: Mobile Development Build
+
+on:
+  push:
+    branches:
+      - dev
+
+jobs:
+  development:
+    name: Development Android Build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Setup Expo
+        uses: expo/expo-github-action@v8
+        with:
+          eas-version: latest
+          token: ${{ secrets.EXPO_TOKEN }}
+
+      - name: Build Development App
+        run: eas build --platform android --profile development --non-interactive
+        env:"Development Build successfully created"
