@@ -33,4 +33,4 @@ jobs:
 
       - name: Build Development App
         run: eas build --platform android --profile development --non-interactive
-        env:"Development Build successfully created"
+        echo:"Development Build successfully created"
