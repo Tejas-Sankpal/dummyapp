@@ -4,7 +4,9 @@ export default function HomeScreen() {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Hello Developers
-        i am a developer 👋</Text>
+        <Text style={styles.title}>Tejas</Text>
+        
+                i am a developer 👋</Text>
       <Text style={styles.subtitle}>Welcome to Dummy app </Text>
     </View>
   );
